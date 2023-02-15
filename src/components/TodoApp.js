@@ -4,12 +4,12 @@ function TodoApp() {
   const [todo, setTodo] = useState("");
   const [data, setData] = useState([]);
 
-  // useEffect(() => {
-  //   const storeData = JSON.parse(localStorage.getItem("todos"));
-  //   if (storeData) {
-  //     setData(storeData);
-  //   }
-  // }, []);
+  useEffect(() => {
+    const storeData = JSON.parse(localStorage.getItem("todos"));
+    if (storeData) {
+      setData(storeData);
+    }
+  }, []);
 
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(data));

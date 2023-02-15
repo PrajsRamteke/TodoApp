@@ -2,14 +2,17 @@ import React, { useEffect, useState } from "react";
 
 function TodoApp() {
   const [todo, setTodo] = useState("");
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(getLocalItem);
 
-  useEffect(() => {
-    const storeData = JSON.parse(localStorage.getItem("todos"));
-    if (storeData) {
-      setData(storeData);
+  function getLocalItem() {
+    const store = localStorage.getItem("todos");
+    // console.log(store);
+    if (store) {
+      return JSON.parse(store);
+    } else {
+      return [];
     }
-  }, []);
+  }
 
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(data));
@@ -27,8 +30,8 @@ function TodoApp() {
   };
   function RemoveAll() {
     setData([]);
-    // localStorage.removeItem("todos");
     localStorage.clear();
+    // localStorage.removeItem("todos");
   }
   return (
     <>
@@ -41,7 +44,9 @@ function TodoApp() {
               value={todo}
               onChange={(event) => setTodo(event.target.value)}
             />
-            <button onClick={AddTodo}>Add</button>
+            <button disabled={todo.length < 1} onClick={AddTodo}>
+              Add
+            </button>
           </div>
           <div className="heading">
             <h3>Your Data</h3>

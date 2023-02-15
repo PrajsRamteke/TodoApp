@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import { FiTrash2 } from "react-icons/fi";
 function TodoApp() {
   const [todo, setTodo] = useState("");
   const [data, setData] = useState(getLocalItem);
@@ -61,7 +61,7 @@ function TodoApp() {
                   <h2>{element}</h2>
                   <div>
                     <button className="btn" onClick={() => Removeitem(index)}>
-                      Remove
+                      <FiTrash2 />
                     </button>
                   </div>
                 </div>

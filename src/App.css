@@ -21,7 +21,7 @@
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
     rgba(0, 0, 0, 0.22) 0px 10px 10px;
   border-radius: 8px;
-  background-color: rgb(234, 234, 234);
+  background-color: rgb(227, 227, 227);
 }
 .user input {
   padding: 10px 20px;
@@ -60,14 +60,15 @@
   font-weight: 600;
 }
 .todo_data .btn {
-  padding: 10px 20px;
+  padding: 8px 12px;
   background-color: rgb(225, 57, 57);
   outline: none;
   border: none;
   border-radius: 10px;
-  font-size: 16px;
+  font-size: 22px;
   font-weight: 600;
   color: white;
+  display: flex;
 }
 .heading {
   display: flex;
